@@ -10,12 +10,15 @@
 <body>
 	<select name="id" style="width: 126px;">
 		<%
-					String name = request.getParameter("nom");
-					String prenom = request.getParameter("prenom");
-					String mail = request.getParameter("mail");
-					Personne p = new Personne(name,prenom, mail); 
-					Personne.add(p);
-					for (int i = 0; i < Personne.listIds().length; i++) {
+			if(request.getParameter("nom")!=null && request.getParameter("prenom")!=null && request.getParameter("mail")!=null){
+				
+				String name = request.getParameter("nom");
+				String prenom = request.getParameter("prenom");
+				String mail = request.getParameter("mail");
+				Personne p = new Personne(name,prenom, mail); 
+				Personne.add(p);
+			}
+			for (int i = 0; i < Personne.listIds().length; i++) {
 				%>
 		<option
 			value="<%String id = Personne.listIds()[i];
