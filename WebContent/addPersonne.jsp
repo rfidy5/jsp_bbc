@@ -16,7 +16,7 @@
 			</tr>
 
 			<tr>
-				<td><label for="prenom"> Prénom</label></td>
+				<td><label for="prenom"> Prenom</label></td>
 				<td><input type="text" name="prenom" /></td>
 			</tr>
 			
@@ -34,7 +34,7 @@
 		String prenom = request.getParameter("prenom");
 		String mail = request.getParameter("mail");
 
-		if ((nom==null && prenom==null && prenom==null) || (nom.equalsIgnoreCase("") && prenom.equalsIgnoreCase("")  && mail.equalsIgnoreCase(""))) {
+		if ((nom==null || prenom==null || prenom==null) || (nom.equalsIgnoreCase("") || prenom.equalsIgnoreCase("")  || mail.equalsIgnoreCase(""))) {
 			out.print("<div style=\"font-size:12px;color:red\">**Vous devez remplir tous les champs</div>");
 		} else {
 			
