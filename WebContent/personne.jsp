@@ -13,9 +13,7 @@
 	<%
 			String nom = request.getParameter("nom");
 			String[] listIdsTab=Personne.listIds();
-			        for(int i =0; i< listIdsTab.length; i++)
-			{
-				if(Personne.get(listIdsTab[i]){
+		
 					Personne personne = Personne.get(nom);
 					out.println(personne.getNom());
 			
@@ -23,11 +21,9 @@
 					out.println(personne.getPrenom());
 					out.println(personne.getEmail());
 					out.println(personne.getId());
-				}
-				else if(Personne.get(listIdsTab[i]).getNom() != nom){
-					out.print("la personne n'existe pas dans l'annuaire");
-				}
-			}
+
+				
+			
 			%>
 </body>
 </html>
