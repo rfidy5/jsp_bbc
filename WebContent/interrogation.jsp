@@ -6,34 +6,40 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
 </head>
 <body>
-	<h1>Chercher une personne</h1>
-	<!-- form method="post"  action="personne.jsp">
-		<input type="text" name="identifiant"> <input type="submit" value="Submit">
-	</form-->
-	<form method="post" action="personne.jsp">
-		<select name="id" style=" width : 126px;">
-				<%
-					String name = request.getParameter("nom");
-					String prenom = request.getParameter("prenom");
-					String mail = request.getParameter("mail");
-					Personne p = new Personne(name,prenom, mail); 
-					Personne.add(p);
-					for (int i = 0; i < Personne.listIds().length; i++) {
-				%>
-				<option
-					value="<%String id = Personne.listIds()[i];
-				out.print(id);%>
-				">
-					<%
-						out.print(Personne.get(id).getNom());
-						}
-					%>
-				</option>
-		</select> <br/>
-		<!-- input type="text" name="identifiant"--> 
-		<input type="submit" value="Submit">
+	<form method="POST" action="interrogationT.jsp">
+
+		Chercher une personne: <input type="text" name="id" /> <input
+			type="submit" value="submit" />
+
 	</form>
+	<h1>Informations sur la personne</h1>
+
+	<table>
+
+	<%
+			String id = request.getParameter("id");
+			String[] listIdsTab=Personne.listIds();
+	        for(int i =0; i< listIdsTab.length; i++){
+
+				if(listIdsTab[i].equalsIgnoreCase(id)){
+					System.out.print("trouver"+listIdsTab[i]);
+					Personne personne = Personne.get(listIdsTab[i]);
+					out.print("<tr><td>Nom</td><td>");
+					out.println(personne.getNom());
+					out.print("</td><tr><td>Prenom</td><td>");
+					out.println(personne.getPrenom());
+					out.print("</td><tr><td>Email</td>");
+					out.println(personne.getEmail());
+					out.print("</td></tr><tr><td>Id</td><td>");
+					out.println(personne.getId());
+					out.print("</td><tr>");
+				}
+				
+			}
+			%>
+			</table>
 </body>
 </html>

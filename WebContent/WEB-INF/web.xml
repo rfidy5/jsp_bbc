@@ -5,9 +5,16 @@
     "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
 
 <web-app>
+  
+    <welcome-file-list>
+    <welcome-file>accueilt.jsp</welcome-file>
+  </welcome-file-list>
+  
   <taglib>
     <taglib-uri>lib/jspTemplate</taglib-uri>
     <taglib-location>/WEB-INF/tlds/template.tld</taglib-location>
   </taglib>
+
+  
 </web-app>
 

@@ -1,8 +1,8 @@
 <%@ taglib uri="WEB-INF/tlds/template.tld" prefix="template" %>
 <html>
- <head><title><template:get name='title'/>
+ <head><title><template:get name='title'/></title>
 <link rel="STYLESHEET" href="css/templates.css" charset="ISO-8859-1" type="text/css">
-                                    </title>
+                                    
                                     </head>
 <body background='images/bg.gif'>
                                     
